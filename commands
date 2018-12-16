@@ -1,0 +1,26 @@
+curl -d '{"username":"admin", "password":"admin"}' -H "Content-Type: application/json" -v -X POST http://localhost:5000/api/login
+
+//remember to export TOKEN=
+
+// with certificate
+curl -d '{"username":"admin", "password":"admin"}' -H "Content-Type: application/json" --cacert python/ssl/serverA.crt -key python/ssl/cacert.pem -v -X POST https://localhost:5000/api/login
+
+curl -s -d '{"username":"admin", "password":"admin"}' -H "Content-Type: application/json" --cacert python/ssl/serverA.crt -key python/ssl/cacert.pem -X POST -v https://localhost:5000/api/login
+
+//authenticate
+curl -H "Accept: application/json" -H "Authorization: Bearer $TOKEN" --cacert python/ssl/serverA.crt -key python/ssl/cacert.pem -v https://localhost:5000/api/status
+
+
+//register
+curl -s -d '{"firstname":"new", "lastname":"new", "email":"email", "username":"new", "city":"new", "address":"new", "password":"new", "confirm_password":"new"}' -H "Content-Type: application/json" --cacert python/ssl/serverA.crt -key python/ssl/cacert.pem -X POST -v https://localhost:5000/api/register
+
+//send transfer
+curl -s -H "Content-type: application/json" -H "Authorization: Bearer ${TOKEN}" --data '{"PLN":"12", "PLN_C":"00", "accountnumber":"12312312312", "firstname":"name", "lastname":"last", "city":"city", "address":"somewhere", "titletransfer":"new transfer"}' --cacert python/ssl/serverA.crt -key python/ssl/cacert.pem -v -X POST https://localhost:5000/api/form
+
+
+//see all transfers
+curl -s -H "Accept: application/json" -H "Authorization: Bearer ${TOKEN}" --cacert python/ssl/serverA.crt -key python/ssl/cacert.pem -v  https://localhost:5000/api/get/transfers
+
+
+//accept transfer
+curl -s -H "Content-type: application/json" -H "Authorization: Bearer ${TOKEN}" -d '{"accept":"4"}' --cacert python/ssl/serverA.crt -key python/ssl/cacert.pem -v -X POST https://localhost:5000/api/accept

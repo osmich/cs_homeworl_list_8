@@ -1,0 +1,93 @@
+
+<html>
+    <head>
+
+
+    </head>
+    <body>
+        <div>
+            <h1>Pending transfers</h1>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <td>User</td>
+                    <td>PLN</td>
+                    <td>AccountNumber</td>
+                    <td>Address</td>
+                    <td>City</td>
+                    <td>Title of the transfer</td>
+                    <td>Approved</td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td>343.12</td>
+                    <td>12312312412441241890</td>
+                    <td>London</td>
+                    <td>London</td>
+                    <td>Imagine all the money</td>
+                    <td>0</td>
+                    <td>
+                        <button id=1 onClick="action(this.id)">
+                                <!-- <button id=1 onClick="location.href='/approve?id='this.id">  -->
+                            approve
+                        </button>
+                    </td>
+                </tr>
+                
+                <tr id="wtf">
+                    <td></td>
+                    <td>32.09</td>
+                    <td>23894u23940285920</td>
+                    <td>here</td>
+                    <td>heher</td>
+                    <td>Nothing</td>
+                    <td id="s">0</td>
+                    <td id="sdsd">
+                        <button id=2 onClick="action(this.id)">
+                                <!-- <button id=2 onClick="location.href='/approve?id='this.id">  -->
+                            approve
+                        </button>
+                    </td>
+                </tr>
+                
+            </table>
+        </div>
+        <div>
+            <p></p>
+            <button onclick="location.href='/admin';">go back</button>
+        </div>
+
+
+        <script>
+            var searchText = "Nothing";
+            var aTags = document.getElementsByTagName("td");
+            var found;
+
+            for (var i = 0; i < aTags.length; i++) {
+              if (aTags[i].textContent == searchText) {
+                found = aTags[i];
+                break;
+              }
+            }
+            console.log(found.parentElement.id)
+
+            p = document.getElementById(found.parentElement.id);
+            p = p.lastChild;
+            console.log(p)
+            childdr = p.lastChild;
+            child = childdr.id
+            console.log("log" + child)
+
+            function action(id) {
+                console.log('cliked');
+                location.href='/approve?accept='+child;
+            }
+        
+        </script>
+    </body>
+
+
+</html>

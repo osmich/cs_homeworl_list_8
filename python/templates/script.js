@@ -1,0 +1,9 @@
+var urlParams = new URLSearchParams(window.location.search);
+document.getElementById('PLN').value = urlParams.get("PLN");   
+document.getElementById('PLN_C').value = urlParams.get("PLN_C"); 
+document.getElementById('accountnumber').value = urlParams.get("accountnumber"); 
+document.getElementById('firstname').value = urlParams.get("firstname"); 
+document.getElementById('lastname').value = urlParams.get("lastname"); 
+document.getElementById('city').value = urlParams.get("city"); 
+document.getElementById('address').value = urlParams.get("address"); 
+document.getElementById('titletransfer').value = urlParams.get("titletransfer"); 

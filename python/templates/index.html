@@ -1,0 +1,147 @@
+
+
+<html <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>My Bank</title>
+
+    <style type="text/css">
+
+a.link_1  {font-size:10pt;
+               padding:0px;
+               font-family:arial,helvetica,sans-serif;
+               font-weight:normal;
+               text-decoration:none;
+               color:#993300;}
+
+a.link_1:hover {font-weight:normal;
+                text-decoration:underline;
+                background-color:#ffffff;
+                color:#ff0000;}
+
+
+.cldialog {font-size:10pt;
+               font-family:arial,helvetica,sans-serif;
+               font-weight:bold;
+               color:#993300;}
+
+
+.ctdialog {font-size:10pt;
+               padding-left:2px;
+               font-family:arial,helvetica,sans-serif;
+               font-weight:bold;
+               border-width:1px;
+               border-color:#993300;
+               color:#663300;}
+
+.csdialog {font-size:10pt;
+               font-family:arial,helvetica,sans-serif;
+               font-weight:bold;
+               border-left-width:1px;
+               border-top-width:1px;
+               border-right-width:1px;
+               border-bottom-width:1px;
+               border-color:#993300;
+               background-color:#993300;
+               color:#ffffff;}
+.csfocus {font-size:10pt;
+                 font-family:arial,helvetica,sans-serif;
+                 font-weight:bold;
+                 border-left-width:1px;
+                 border-top-width:1px;
+                 border-right-width:1px;
+                 border-bottom-width:1px;
+                 border-color:#ffff00;
+                 background-color:#444444;
+                 color:#ffff00;}
+
+.info_1 {font-size:8pt;
+                 font-family:arial,helvetica,sans-serif;
+                 font-weight:normal;
+                 color:#666666;}
+
+.err         {font-size:10pt;
+               padding-left:2px;
+               font-family:arial,helvetica,sans-serif;
+               font-weight:bold;
+               color:#ff0000;}
+
+
+
+
+</style>
+
+
+
+
+
+</head>
+<body bgcolor="#ffffff" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10">
+
+
+
+
+
+
+<table width="100%" align="center" cellspacing="0" cellpadding="0" bgcolor="#ffffff" border="0">
+    <tr>
+        <td>
+
+            <table width="70%" align="center" cellspacing="0" cellpadding="4" border="0">
+                <tbody><tr>
+                    <td class="err" align="center" colspan="2">
+                        
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <form name="form1" action="/login" method="POST">
+
+                <input type="hidden" name="orgaccess" value="http">
+                <table align="center" cellspacing="0" cellpadding="4" border="0">
+                    <tbody><tr>
+                        <td class="cldialog" align="right">
+                            login:
+                        </td>
+                        <td align="left"> <input class="ctdialog" type="text" size="24" id="username" tabindex="1" name="username">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cldialog" align="right">
+                            password:
+                        </td>
+                        <td align="left">
+                            <input class="ctdialog" type="password" name="password" size="24" id="password" tabindex="2">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td align="left">
+
+                            <input class="csdialog" id="button" onblur="this.className=&#39;csfocus&#39;" onmouseover="this.className=&#39;csfocus&#39;" title="Log In" onfocus="this.className=&#39;csfocus&#39;" onclick="handleSubmit(); return false;" tabindex="3" onmouseout="this.className=&#39;csdialog&#39;" type="submit" value="     Log In     " name="Button2">
+                        </td>
+                    </tr>
+                    </tbody></table>
+            </form>
+
+
+            <div align="center">
+
+              
+            </div> 
+
+            <table align="center">
+    
+                <td align="left">
+            
+                    <a href="/register" class="csdialog" id="button-register" onblur="this.className=&#39;csfocus&#39;" onmouseover="this.className=&#39;csfocus&#39;" title="Register" onfocus="this.className=&#39;csfocus&#39;"tabindex="3"  onmouseout="this.className=&#39;csdialog&#39;" name="Button2">Register</button>
+                </td>
+                <td>
+                    <button type="button" onclick="location.href='/reset';">reset passord</button>
+                </td>
+
+                </tbody></table>
+        </td></tr></tbody></table>
+
+</body></html>

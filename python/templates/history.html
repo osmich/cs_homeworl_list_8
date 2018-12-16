@@ -1,0 +1,48 @@
+<html>
+    <head>
+
+
+    </head>
+    <body>
+        <div>
+            <h1>Your previous transfers</h1>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <td>PLN</td>
+                    <td>AccountNumber</td>
+                    <td>Address</td>
+                    <td>City</td>
+                    <td>Title of the transfer</td>
+                    <td>Status</td>
+                </tr>
+                {% for item in data %}
+                <tr>
+                    <td>{{item['pln']|safe}}.{{item['pln_c']|safe}}</td>
+                    <td>{{item['AccountNumber']|safe}}</td>
+                    <td>{{item['Address']|safe}}</td>
+                    <td>{{item['City']|safe}}</td>
+                    <td>{{item['TitleTransfer']|safe}}</td>
+                    <td>
+                        {% if item['Status']|safe %}
+                            <p>Completed</p>
+                        {% else %}
+                            <p>Pending</p>
+                        {% endif %}
+                    </td>
+
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div>
+            <p></p>
+            <button onclick="location.href='/account';">go back</button>
+        </div>
+
+
+    </body>
+
+
+</html>

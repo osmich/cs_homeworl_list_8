@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+
+</head>
+
+<body>
+    <div align="center">
+        <h1 th:text="'Hello, ' + ${name} " />
+    </div>
+
+    <div align="center">
+        <p>there is nothing here</p>
+        <!-- <a href="/">login</a> -->
+
+    </div>
+    <div>
+        <button onclick="location.href='/form';">Send transfer</button>
+        <button onclick="location.href='/history';">Transfer history</button>
+        <button onclick="location.href='/logout';">Logout</button>
+    </div>
+
+</body>
+
+</html>

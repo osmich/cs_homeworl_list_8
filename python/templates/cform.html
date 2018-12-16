@@ -1,0 +1,102 @@
+<html>
+    <head>
+
+
+    </head>
+    <body>
+        <div>
+            <h1>Confirm transfer details</h1>
+        </div>
+            <div>
+                <form name="form1" action="/sendtransfer" method="GET">
+       
+                    <table align="center" cellspacing="0" cellpadding="4" border="0">
+                        <tbody><tr>
+                            <td class="cldialog" align="right">
+                                PLN:
+                            </td>
+                            <td align="left"> 
+                                <input readonly="readonly" class="ctdialog" type="text" size="5" id="PLN" tabindex="1" name="PLN">
+                                <input readonly="readonly" class="ctdialog" type="text" size="5" id="PLN_C" tabindex="1" name="PLN_C">
+                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cldialog" align="right">
+                                Account Number:
+                            </td>
+                            <td align="left"> 
+                                <input readonly="readonly" class="ctdialog" type="text" size="24" id="accountnumber" tabindex="1" name="accountnumber">
+                              
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cldialog" align="right">
+                                First Name:
+                            </td>
+                            <td align="left"> 
+                                <input readonly="readonly" class="ctdialog" type="text" size="24" id="firstname" tabindex="1" name="firstname">
+                              
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cldialog" align="right">
+                                Last Name:
+                            </td>
+                            <td align="left"> 
+                                <input readonly="readonly" class="ctdialog" type="text" size="24" id="lastname" tabindex="1" name="lastname">
+                              
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cldialog" align="right">
+                                City:
+                            </td>
+                            <td align="left"> 
+                                <input readonly="readonly" class="ctdialog" type="text" size="24" id="city" tabindex="1" name="city">
+                              
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cldialog" align="right">
+                                Address:
+                            </td>
+                            <td align="left"> 
+                                <input readonly="readonly" class="ctdialog" type="text" size="24" id="address" tabindex="1" name="address">
+                              
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cldialog" align="right">
+                                Title of the transfer:
+                            </td>
+                            <td align="left">
+                                <input readonly="readonly" class="ctdialog" type="text" name="titletransfer" size="24" id="titletransfer" tabindex="1">
+                                <input type="hidden" name="orgaccess" value="http" id="orgaccess">
+                            </td>
+                        </tr>
+                        
+                        <tr>    
+                            <td> 
+                                <input readonly="readonly" class="csdialog" id="sendtransfer" onblur="this.className=&#39;csfocus&#39;" onmouseover="this.className=&#39;csfocus&#39;" title="confirm transfer" onfocus="this.className=&#39;csfocus&#39;" onclick="handleSubmit(); return false;" tabindex="3" onmouseout="this.className=&#39;csdialog&#39;" type="submit" value="   Send transfer    " >
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+
+
+        <div>
+            <button type="button" onclick="location.href='/account';">discard changes</button>
+        </div>
+
+        <script type="text/javascript" src="script.js" ></script>
+        <!-- <script type="text/javascript" src="violate.js" ></script> -->
+
+
+    </body>
+
+
+</html>

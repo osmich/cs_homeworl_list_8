@@ -1,0 +1,131 @@
+<html>
+    <head>
+
+
+    </head>
+    <body>
+        <div>
+            <h1>New Transfer</h1>
+        </div>
+            <div>
+                <form name="form1" action="/cform" onsubmit="return validateForm()" method="GET">
+                    <input type="hidden" name="fromlogin" value="true">
+    
+                    <input type="hidden" name="orgaccess" value="http">
+                    <table align="center" cellspacing="0" cellpadding="4" border="0">
+                        <tbody><tr>
+                            <td class="cldialog" align="right">
+                                PLN:
+                            </td>
+                            <td align="left"> 
+                                <input class="ctdialog" type="text" size="5" id="PLN" tabindex="1" name="PLN">
+                                <input class="ctdialog" type="text" size="5" id="PLN_C" tabindex="1" name="PLN_C">
+                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cldialog" align="right">
+                                Account Number:
+                            </td>
+                            <td align="left"> 
+                                <input class="ctdialog" type="text" size="24" id="accountnumber" tabindex="1" name="accountnumber">
+                              
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cldialog" align="right">
+                                First Name:
+                            </td>
+                            <td align="left"> 
+                                <input class="ctdialog" type="text" size="24" id="firstname" tabindex="1" name="firstname">
+                              
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cldialog" align="right">
+                                Last Name:
+                            </td>
+                            <td align="left"> 
+                                <input class="ctdialog" type="text" size="24" id="lastname" tabindex="1" name="lastname">
+                              
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cldialog" align="right">
+                                City:
+                            </td>
+                            <td align="left"> 
+                                <input class="ctdialog" type="text" size="24" id="city" tabindex="1" name="city">
+                              
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cldialog" align="right">
+                                Address:
+                            </td>
+                            <td align="left"> 
+                                <input class="ctdialog" type="text" size="24" id="address" tabindex="1" name="address">
+                              
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="cldialog" align="right">
+                                Title of the transfer:
+                            </td>
+                            <td align="left">
+                                <input class="ctdialog" type="text" name="titletransfer" size="24" id="titletransfer" tabindex="1">
+                            </td>
+                        </tr>
+                        
+                        <tr>    
+                            <td> 
+                                <input class="csdialog" id="sendtransfer" onblur="this.className=&#39;csfocus&#39;" onmouseover="this.className=&#39;csfocus&#39;" title="confirm transfer" onfocus="this.className=&#39;csfocus&#39;" onclick="handleSubmit(); return false;" tabindex="3" onmouseout="this.className=&#39;csdialog&#39;" type="submit" value="    Confirm transfer    " >
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+
+        <div>
+            <button type="button" onclick="location.href='/account';">discard changes</button>
+        </div>
+
+        <script>
+            
+            var firstname = document.getElementById("firstname")
+            var lastname = document.getElementById("lastname")
+            var accountnumber = document.getElementById("accountnumber")
+            var PLN = document.getElementById("PLN")
+            var PLN_C = document.getElementById("PLN_C")
+            var address = document.getElementById("address")
+            var titletransfer = document.getElementById("titletransfer")
+    
+            function validateInput(field)
+            {
+                var re = /[a-zA-Z0-9 ]+/;
+                if (field.value.trim() === "" || !re.test(String(field.value).toLowerCase())) {
+                   return false;
+                }
+                  
+                return true;
+                      
+            }
+    
+            function validateForm() {
+                if(!(validateInput(firstname) && validateInput(lastname) && validateInput(accountnumber) && validateInput(PLN) && validateInput(PLN_C) && validateInput(address) && validateInput(titletransfer))) {
+                    alert('All fields are required and must contain letters or numbers')
+                    return false;
+                }
+    
+                return true;
+            }
+    
+    
+    
+        </script>
+    </body>
+
+
+</html>

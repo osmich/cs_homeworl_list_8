@@ -1,0 +1,57 @@
+<html>
+    <head>
+
+
+    </head>
+    <body>
+        <div>
+            <h1>Pending transfers</h1>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <td>User</td>
+                    <td>PLN</td>
+                    <td>AccountNumber</td>
+                    <td>Address</td>
+                    <td>City</td>
+                    <td>Title of the transfer</td>
+                    <td>Approved</td>
+                    <td></td>
+                </tr>
+                {% for item in data %}
+                <tr>
+                    <td>{{item['UserName']}}</td>
+                    <td>{{item['pln']}}.{{item['pln_c']}}</td>
+                    <td>{{item['AccountNumber']}}</td>
+                    <td>{{item['Address']}}</td>
+                    <td>{{item['City']}}</td>
+                    <td>{{item['TitleTransfer']}}</td>
+                    <td>{{item['Status']}}</td>
+                    <td>
+                        <button id={{item['id']}} onClick="action(this.id)">
+                                <!-- <button id={{item['id']}} onClick="location.href='/approve?id='this.id">  -->
+                            approve
+                        </button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div>
+            <p></p>
+            <button onclick="location.href='/admin';">go back</button>
+        </div>
+
+
+        <script>
+            function action(id) {
+                console.log('cliked');
+                location.href='/approve?accept='+id;
+            }
+        
+        </script>
+    </body>
+
+
+</html>

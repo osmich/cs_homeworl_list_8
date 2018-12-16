@@ -1,0 +1,169 @@
+<html>
+
+    <head>
+
+    </head>
+
+
+
+    <body>
+        <h1 align="center">Create a new Account</h1>
+
+        <table width="100%" align="center" cellspacing="0" cellpadding="0" bgcolor="#ffffff" border="0">
+            <tr>
+                <td>
+        
+                    <table width="70%" align="center" cellspacing="0" cellpadding="4" border="0">
+                        <tbody><tr>
+                            <td class="err" align="center" colspan="2">
+                                <img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/spacer.gif" width="1" height="30" alt="" hspace="0" vspace="0" border="0">
+                            </td>
+                        </tr>
+                        </tbody></table>
+        
+                   
+                    <form name="form1" action="/postRegister" onsubmit="return validateForm()" method="POST">
+                        <input type="hidden" name="fromlogin" value="true">
+        
+                        <input type="hidden" name="orgaccess" value="http">
+                        <table align="center" cellspacing="0" cellpadding="4" border="0">
+                            <tbody><tr>
+                                <td class="cldialog" align="right">
+                                    First Name:
+                                </td>
+                                <td align="left"> 
+                                    <input class="ctdialog" type="text" size="24" id="firstname" tabindex="1" name="firstname">
+                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cldialog" align="right">
+                                    Last Name:
+                                </td>
+                                <td align="left"> 
+                                    <input class="ctdialog" type="text" size="24" id="lastname" tabindex="1" name="lastname">
+                                  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cldialog" align="right">
+                                    Email:
+                                </td>
+                                <td align="left"> 
+                                    <input class="ctdialog" type="text" size="24" id="email" tabindex="1" name="email">
+                                  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cldialog" align="right">
+                                    User Name:
+                                </td>
+                                <td align="left"> 
+                                    <input class="ctdialog" type="text" size="24" id="username" tabindex="1" name="username">
+                                  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cldialog" align="right">
+                                    City:
+                                </td>
+                                <td align="left"> 
+                                    <input class="ctdialog" type="text" size="24" id="city" tabindex="1" name="city">
+                                  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cldialog" align="right">
+                                    Address:
+                                </td>
+                                <td align="left"> 
+                                    <input class="ctdialog" type="text" size="24" id="address" tabindex="1" name="address">
+                                  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cldialog" align="right">
+                                    Password:
+                                </td>
+                                <td align="left">
+                                    <input class="ctdialog" type="password" name="password" size="24" id="password" tabindex="1">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cldialog" align="right">
+                                    Repeat Password:
+                                </td>
+                                <td align="left"> 
+                                    <input class="ctdialog" type="password" size="24" id="confirm_password" tabindex="1" name="confirm_password">
+                                  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td align="left">
+                                    <img src="./SYSTEM POCZTY STUDENCKIEJ _ Wroclawskie Centrum Sieciowo-Superkomputerowe_files/spacer.gif" width="1" height="10" alt="" hspace="0" vspace="0" border="0">
+                                    <br>        
+                                    <input class="csdialog" id="button" onblur="this.className=&#39;csfocus&#39;" onmouseover="this.className=&#39;csfocus&#39;" title="Create An account" onfocus="this.className=&#39;csfocus&#39;" tabindex="3" onmouseout="this.className=&#39;csdialog&#39;" type="submit" value="    Create an account    " >
+                                </td>
+                            </tr>
+                            </tbody></table>
+                    </form>
+
+
+    </body>
+
+    <script>
+        var password = document.getElementById("password")
+          , confirm_password = document.getElementById("confirm_password");
+        
+        function validatePassword(){
+          if(password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwords Don't Match");
+          } else {
+            confirm_password.setCustomValidity('');
+          }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+
+        var firstname = document.getElementById("firstname")
+        var lastname = document.getElementById("lastname")
+        var email = document.getElementById("email")
+        var username = document.getElementById("username")
+        var city = document.getElementById("city")
+        var address = document.getElementById("address")
+        var password = document.getElementById("password")
+
+        function validateInput(field)
+        {
+            var re = /[a-zA-Z0-9 ]+/;
+            if (field.value.trim() === "" || !re.test(String(field.value).toLowerCase())) {
+               return false;
+            }
+              
+            return true;
+                  
+        }
+
+        function validateForm() {
+            if(!(validateInput(firstname) && validateInput(lastname) && validateInput(email) && validateInput(username) && validateInput(city) && validateInput(address) && validateInput(password))) {
+                alert('All fields are required and must contain letters or numbers')
+                return false;
+            }
+            if(!validateEmail(email.value)) {
+                alert('Wrong email address')
+                return false;
+            }
+            return true;
+        }
+
+        function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+
+    </script>
+
+</html>
